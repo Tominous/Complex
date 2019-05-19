@@ -20,9 +20,7 @@ public class ProxyPingListener extends BungeeListener {
     public void onProxyPing(ProxyPingEvent event) {
         ServerPing response = event.getResponse();
 
-        Random random = new Random();
         int online = getBungee().getProxy().getOnlineCount();
-        online = online + random.nextInt(1000 - 500) + 500;
         response.setPlayers(new ServerPing.Players(online + 1, online, new ServerPing.PlayerInfo[0]));
 
         String motd = getBungee().getCache().getShard("settings").getString("motd");
