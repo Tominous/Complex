@@ -17,7 +17,6 @@ public class ComplexWebSocketServer extends WebSocketServer {
     public ComplexWebSocketServer(Bungee bungee, Integer listenPort) {
         super(new InetSocketAddress(listenPort));
         this.bungee = bungee;
-        bungee.getLogger().info("Websocket server started.");
     }
 
     @Override
