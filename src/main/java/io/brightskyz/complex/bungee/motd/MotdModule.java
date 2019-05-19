@@ -15,7 +15,7 @@ public class MotdModule extends BungeeModule {
 
     @Override
     public void onEnable() {
-        getBungee().getCache().getShard("settings").set("motd", "&f         &9&m---&8&m&l[-&f  &6&lComplex &f&lGames &8[&7US&8] &8&m&l-]&9&m---&r\n                     &c&lowo whats this");
+        getBungee().getCache().getShard("settings").set("motd", "&f         &9&m---&8&m&l[-&f  &6&lComplex &f&lGames &8[&7US&8] &8&m&l-]&9&m---&r");
         try {
             PreparedStatement statement = getBungee().getDatabaseConnection().prepareStatement("SELECT * FROM settings WHERE name = 'motd'");
             ResultSet resultSet = statement.executeQuery();
