@@ -1,6 +1,7 @@
 package io.brightskyz.complex;
 
 import io.brightskyz.complex.bungee.motd.MotdModule;
+import io.brightskyz.complex.bungee.socketServer.SocketServerModule;
 import io.brightskyz.complex.helpers.BungeeConfig;
 import io.brightskyz.complex.helpers.Cache;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -16,11 +17,13 @@ public class Bungee extends Plugin {
     private Connection connection = null;
     private Cache cache = new Cache();
     private MotdModule motdModule = new MotdModule(this);
+    private SocketServerModule socketServerModule = new SocketServerModule(this);
 
     @Override
     public void onEnable() {
         bungeeConfig = new BungeeConfig(this, "bungee-config.yml", true);
         getLogger().info("Enabled the Complex Bungeecord plugin.");
+        socketServerModule.onEnable();
         motdModule.onEnable();
     }
 
@@ -52,6 +55,10 @@ public class Bungee extends Plugin {
             e.printStackTrace();
         }
         return connection;
+    }
+
+    public SocketServerModule getSocketServerModule() {
+        return socketServerModule;
     }
 
     public BungeeConfig getBungeeConfig() {

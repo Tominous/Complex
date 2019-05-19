@@ -18,6 +18,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+    compile group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.4.0'
     // Bungeecord
     compile group: 'net.md-5', name: 'bungeecord-api', version: '1.13-SNAPSHOT'
     // Spigot
