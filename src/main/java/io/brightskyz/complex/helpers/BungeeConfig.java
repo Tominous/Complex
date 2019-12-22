@@ -88,7 +88,7 @@ public class BungeeConfig {
                 if (!configFile.createNewFile()) {
                     throw new IOException("File already exists.");
                 }
-                //getClass().getClassLoader().getResourceAsStream()
+                getClass().getClassLoader().getResourceAsStream()
                 try (InputStream is = plugin.getResourceAsStream(filename);
                      OutputStream os = new FileOutputStream(configFile)) {
                     ByteStreams.copy(is, os);
